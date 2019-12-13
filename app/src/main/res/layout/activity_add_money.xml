@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddMoneyActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_remove_money_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/date_selector"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_date_range" />
+
+        <TextView
+            android:id="@+id/date_detail_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="00-00-0000" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_save_black_24dp"
+            android:onClick="saveAddMoney"
+            android:id="@+id/add_money" />
+
+    </LinearLayout>
+
+    <View style="@style/Divider" />
+
+    <LinearLayout
+        android:id="@+id/layout_remove_money_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_remove_money_head">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="16dp"
+            android:paddingLeft="20dp"
+            android:text="@string/activity_money_balance"
+            android:textAppearance="?android:textAppearanceLarge"/>
+
+        <EditText
+            android:id="@+id/txt_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:backgroundTint="@color/Transparent"
+            android:paddingTop="16dp"
+            android:textAppearance="?android:textAppearanceLarge"/>
+    </LinearLayout>
+
+    <View style="@style/Divider" />
+
+    <LinearLayout
+        android:id="@+id/layout_remove_money_amt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_remove_money_balance">
+        <EditText
+            android:id="@+id/txt_amt_withdraw"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:hint="@string/add_money_amt"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="25dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edit_text_style"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_remove_money_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_remove_money_amt">
+        <ScrollView
+            android:id="@+id/scroll_amt_withdraw"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+
+
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/edit_text_style">
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:paddingLeft="10dp"
+                android:backgroundTint="@color/Transparent"
+                android:hint="@string/money_remarks" />
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

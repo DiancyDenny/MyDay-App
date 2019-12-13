@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.NewDayActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/date_selector"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_date_range"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/date_detail_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:paddingLeft="10dp"
+            android:paddingTop="7dp"
+            android:text="@string/default_date"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/add_money"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="saveThisDay"
+            android:paddingRight="3dp"
+            android:src="@drawable/ic_save_black_24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorYellow">
+        <Button
+            android:id="@+id/title_mic_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/mic_button"
+            android:padding="4dp" />
+        <EditText
+            android:id="@+id/title_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Add a title for your note"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/Transparent"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="Write your diary for the day here...."
+                android:textAppearance="?android:textAppearanceMedium" />
+        </ScrollView>
+    </LinearLayout>
+
+    <View style="@style/Divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/tag"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Enter your TAG and hit space"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_photo_black_24dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_attach_file_black_24dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_audiotrack_black_24dp"/>
+    </LinearLayout>
+
+</LinearLayout>

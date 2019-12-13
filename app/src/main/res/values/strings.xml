@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">MyDay</string>
+    <string name="version_no">v0.1</string>
+    <string name="img_app_desc">Personal Jounal/Diary</string>
+    <string name="app_quote">Your Diary,Your Companion</string>
+
+    <string name="landing_quote">Your Life Companion</string>
+    <string name="landing_description">Diary is a place to keep your memories and confide in privately</string>
+    <string name="landing_start">GET STARTED</string>
+
+    <string name="landing2_quote">Safe and Private</string>
+    <string name="landing2_description">Your Diary belongs to you. Add Passcode to keep your diary private.</string>
+    <string name="landing2_add_passcode">Add Passcode</string>
+    <string name="landing2_skip">SKIP</string>
+
+    <string name="landing3_quote">Keep YourMemories Forever</string>
+    <string name="landing3_description">It is free to sync your memories and see them on any of the devices</string>
+    <string name="landing3_later">LATER</string>
+    <string name="landing3_privacy_policy">Privacy Policy</string>
+
+    <string name="landing4_quote">Congratulations!</string>
+    <string name="landing4_description">Now you can start using your Diary.Enjoy!</string>
+    <string name="landing4_ok">OK, got it</string>
+
+    <string name="default_date">00-00-0000</string>
+
+    <string name="new_day_add">ADD NEW DAY</string>
+
+
+    <string name="activity_money">MY MONEY</string>
+    <string name="activity_money_balance">Balance</string>
+    <string name="add_money_amt">Amount Deposited</string>
+    <string name="remove_money_amt">Amount Withdrawn</string>
+    <string name="money_remarks">Remarks</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+</resources>
