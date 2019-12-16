@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/act_splash_rv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_screen_logo"
+    tools:context=".activity.SplashActivity">
+
+    <ImageView
+        android:id="@+id/act_splash_iv_app_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:contentDescription="@string/act_splash_cdesc_app_logo"
+        android:src="@drawable/ic_app_logo" />
+
+    <TextView
+        android:id="@+id/act_splash_tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_splash_iv_app_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/act_splash_label_app_name"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/act_splash_tv_app_quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_splash_tv_app_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/act_splash_label_app_quote"
+        android:textColor="#0E1C7A"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/act_splash_tv_app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_splash_tv_app_quote"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/act_splash_label_app_version"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/act_splash_pbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:indeterminateDrawable="@drawable/shape_pbar"
+        android:indeterminateDuration="@android:integer/config_longAnimTime" />
+</RelativeLayout>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,6 +13,7 @@
         card_view:cardBackgroundColor="@color/colorAppBodyTheme"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="5dp"
+        android:onClick="viewThisDay"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -32,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="00-00-0000"
+                    android:text="000-00-0000"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
 
@@ -81,9 +84,6 @@
                     android:text="1111"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

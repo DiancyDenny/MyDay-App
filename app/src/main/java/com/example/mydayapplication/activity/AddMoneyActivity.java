@@ -20,4 +20,5 @@ public class AddMoneyActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MyMoneyActivity.class);
         startActivity(intent);
     }
+}
 

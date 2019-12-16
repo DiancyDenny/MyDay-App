@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBodyTheme"
+    android:padding="25dp"
+    tools:context=".activity.LandingActivity1">
+
+    <ImageView
+        android:id="@+id/act_landing1_iv_page_logo"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/img_landing1" />
+
+    <TextView
+        android:id="@+id/act_landing1_tv_landing_quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_landing1_iv_page_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/act_landing1_label_landing_quote"
+        android:textColor="#FFC300"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/act_landing1_tv_landing_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_landing1_tv_landing_quote"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/act_landing1_label_landing_desc"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/act_landing1_btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_landing1_tv_landing_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#FFC300"
+        android:padding="15dp"
+        android:text="@string/act_landing1_label_btn_start" />
+</RelativeLayout>

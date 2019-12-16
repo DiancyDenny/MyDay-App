@@ -16,9 +16,8 @@ public class SetPasscodeActivity extends LockscreenHandler {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_passcode);
 
-        EasyLock.setBackgroundColor(Color.rgb( 51, 140, 198 ));
+        EasyLock.setBackgroundColor(Color.rgb(51, 140, 198));
         EasyLock.checkPassword(this);
-
     }
 
     public void setPass(View view) {
@@ -36,6 +35,4 @@ public class SetPasscodeActivity extends LockscreenHandler {
     public void checkPass(View view) {
         EasyLock.checkPassword(this);
     }
-
-
 }

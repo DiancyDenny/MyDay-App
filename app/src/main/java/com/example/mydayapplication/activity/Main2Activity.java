@@ -3,7 +3,6 @@ package com.example.mydayapplication.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mydayapplication.R;
 import com.example.mydayapplication.adapter.DiaryAdapter;
 import com.example.mydayapplication.business.DiaryBO;
-import com.example.mydayapplication.model.Diary;
+import com.example.mydayapplication.model.DiaryRequest;
 
 import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
 
-    ArrayList<Diary> arListDiary;
+    ArrayList<DiaryRequest> arListDiary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +36,8 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
-    public ArrayList<Diary> getAllDiaryEntries(){
-        ArrayList<Diary> arDataListDiary = new ArrayList<>(3);
+    public ArrayList<DiaryRequest> getAllDiaryEntries(){
+        ArrayList<DiaryRequest> arDataListDiary = new ArrayList<>(3);
         DiaryBO diaryBO = new DiaryBO();
         return diaryBO.getAllDiaryData();
     }

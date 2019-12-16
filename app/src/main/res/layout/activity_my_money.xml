@@ -1,5 +1,6 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,40 +11,40 @@
         android:id="@+id/layout_money_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:background="@color/colorAppBodyTheme"
-        android:layout_alignParentTop="true">
+        android:background="@color/colorAppBodyTheme">
 
-    <TextView
-        android:id="@+id/txt_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/activity_money"
-        android:layout_centerInParent="true"
-        android:textSize="22sp"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/activity_money"
+            android:textColor="@color/colorWhite"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/add_money"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="280dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_add_box_black_24dp"
             android:onClick="addMoney"
-            android:id="@+id/add_money" />
+            android:src="@drawable/ic_add_box_black_24dp" />
+
         <ImageView
+            android:id="@+id/delete_money"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="320dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_indeterminate_check_box_black_24dp"
             android:onClick="removeMoney"
-            android:id="@+id/delete_money"
-            />
-</RelativeLayout>
+            android:src="@drawable/ic_indeterminate_check_box_black_24dp" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -54,21 +55,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:paddingTop="16dp"
             android:paddingLeft="15dp"
+            android:paddingTop="16dp"
             android:text="@string/activity_money_balance"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:textAppearance="?android:textAppearanceLarge" />
 
         <EditText
             android:id="@+id/txt_balance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:paddingTop="16dp"
             android:layout_marginLeft="100dp"
-            android:hint="@string/activity_money_balance"
             android:backgroundTint="@color/Transparent"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/activity_money_balance"
+            android:paddingTop="16dp"
+            android:textAppearance="?android:textAppearanceLarge" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -77,21 +78,20 @@
         android:layout_below="@+id/layout_money_head"
         android:layout_marginTop="50dp">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        android:id="@+id/list_view_diary">
-    </ListView>
+        <ListView
+            android:id="@+id/list_view_diary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
 
         <ImageView
+            android:id="@+id/empty_image_view"
             android:layout_width="125dp"
             android:layout_height="125dp"
-            android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/notes_icon"
-            android:id="@+id/empty_image_view"
-            />
+            android:layout_marginTop="25dp"
+            android:src="@drawable/notes_icon" />
+
         <TextView
             android:id="@+id/empty_title_text"
             android:layout_width="wrap_content"
@@ -101,8 +101,8 @@
             android:fontFamily="sans-serif-medium"
             android:paddingTop="16dp"
             android:text="No added notes yet!!"
-            android:textColor="@color/colorAccent"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/colorAccent" />
 
         <TextView
             android:id="@+id/empty_subtitle_text"
@@ -114,6 +114,6 @@
             android:paddingTop="8dp"
             android:text="Get started to manage your Expense"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#8ee5ee"/>
+            android:textColor="#8ee5ee" />
     </RelativeLayout>
-    </RelativeLayout>
+</RelativeLayout>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,14 +30,13 @@
             android:text="00-00-0000" />
 
         <ImageView
+            android:id="@+id/add_money"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_save_black_24dp"
             android:onClick="saveRemoveMoney"
-            android:id="@+id/add_money" />
-
+            android:src="@drawable/ic_save_black_24dp" />
     </LinearLayout>
 
     <View style="@style/Divider" />
@@ -51,19 +51,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:paddingTop="16dp"
             android:paddingLeft="20dp"
+            android:paddingTop="16dp"
             android:text="@string/activity_money_balance"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:textAppearance="?android:textAppearanceLarge" />
 
         <EditText
             android:id="@+id/txt_balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
             android:backgroundTint="@color/Transparent"
+            android:fontFamily="sans-serif-medium"
             android:paddingTop="16dp"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:textAppearance="?android:textAppearanceLarge" />
     </LinearLayout>
 
     <View style="@style/Divider" />
@@ -73,15 +73,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_remove_money_balance">
+
         <EditText
             android:id="@+id/txt_amt_withdraw"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:hint="@string/remove_money_amt"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="100dp"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="25dp"
-            android:background="@drawable/edit_text_style"/>
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/remove_money_amt" />
     </LinearLayout>
 
     <LinearLayout
@@ -89,19 +90,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/layout_remove_money_amt">
+
         <ScrollView
             android:id="@+id/scroll_amt_withdraw"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="25dp"
             android:layout_marginLeft="100dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/edit_text_style">
+
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/money_remarks"
-                android:backgroundTint="@color/Transparent"/>
+                android:backgroundTint="@color/Transparent"
+                android:hint="@string/money_remarks" />
         </ScrollView>
     </LinearLayout>
-
 </LinearLayout>

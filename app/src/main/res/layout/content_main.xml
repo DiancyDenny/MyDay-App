@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite">
+
         <Button
             android:id="@+id/date_selector"
             android:layout_width="40dp"
@@ -20,6 +20,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/ic_date_range"
             android:paddingLeft="20dp" />
+
         <TextView
             android:id="@+id/date_detail_activity"
             android:layout_width="match_parent"
@@ -28,14 +29,16 @@
             android:paddingLeft="50dp"
             android:paddingTop="7dp"
             android:text="@string/default_date"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:textAppearance="?android:textAppearanceLarge" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/diary_home_head">
+
         <View style="@style/Divider" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/diary_recycler_view"
             android:layout_width="match_parent"
@@ -43,5 +46,4 @@
             android:layout_marginTop="25dp"
             android:scrollbars="vertical" />
     </RelativeLayout>
-
 </RelativeLayout>

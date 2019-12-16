@@ -1,46 +1,33 @@
 package com.example.mydayapplication.business;
 
-import com.example.mydayapplication.model.Diary;
+import com.example.mydayapplication.model.DiaryRequest;
 
 import java.util.ArrayList;
 
 public class DiaryBO {
 
-   public ArrayList<Diary> getAllDiaryData(){
+   public ArrayList<DiaryRequest> getAllDiaryData(){
 
-       ArrayList<Diary>  diaryList = new ArrayList<>(2);
+       ArrayList<DiaryRequest>  diaryList = new ArrayList<>(2);
 
-       Diary diaryModel = new Diary();
+       DiaryRequest diaryModel = new DiaryRequest();
        diaryModel.setDate("23 Nov 2019");
        diaryModel.setTitle("Good Day");
-       diaryModel.setData("The day was....");
-       diaryModel.setExpense(2500);
+       diaryModel.setDesc("The day was....");
+       //diaryModel.setExpense(2500);
        diaryList.add(diaryModel);
 
-       Diary diaryModel2 = new Diary();
+       DiaryRequest diaryModel2 = new DiaryRequest();
        diaryModel2.setDate("23 Nov 2019");
        diaryModel2.setTitle("Good Day");
-       diaryModel2.setData("The day was....");
-       diaryModel2.setExpense(2500);
+       diaryModel2.setDesc("The day was....");
+      // diaryModel2.setExpense(2500);
        diaryList.add(diaryModel2);
 
        return diaryList;
 
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   /* static String[] nameArray = {"Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich","JellyBean", "Kitkat", "Lollipop", "Marshmallow"};

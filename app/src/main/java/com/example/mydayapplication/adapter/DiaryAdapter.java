@@ -9,15 +9,15 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mydayapplication.R;
-import com.example.mydayapplication.model.Diary;
+import com.example.mydayapplication.model.DiaryRequest;
 
 import java.util.List;
 
 public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> {
 
-    private List<Diary> lDiary;
+    private List<DiaryRequest> lDiary;
 
-    public DiaryAdapter(List<Diary> diaryEntries) {
+    public DiaryAdapter(List<DiaryRequest> diaryEntries) {
         lDiary = diaryEntries;
     }
 
@@ -40,7 +40,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(DiaryAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        Diary diary = lDiary.get(position);
+        DiaryRequest diary = lDiary.get(position);
         // Set item views based on your views and data model
         TextView textViewDate = viewHolder.txt_date;
         textViewDate.setText(diary.getDate());
@@ -49,10 +49,10 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> 
         textViewTitle.setText(diary.getTitle());
 
         TextView textViewData = viewHolder.txt_data;
-        textViewData.setText(diary.getData());
+        textViewData.setText(diary.getDesc());
 
-        TextView textViewExpense = viewHolder.txt_expense;
-        textViewExpense.setText(diary.getExpense().toString());
+      /*  TextView textViewExpense = viewHolder.txt_expense;
+        textViewExpense.setText(diary.getExpense().toString());*/
     }
 
     // Returns the total count of items in the list

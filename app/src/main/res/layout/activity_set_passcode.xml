@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,29 +11,28 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="setPass"
         android:layout_marginBottom="16dp"
+        android:onClick="setPass"
         android:text="Set" />
 
     <Button
         android:layout_width="match_parent"
-        android:onClick="changePass"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:onClick="changePass"
         android:text="Change" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="disable"
         android:layout_marginBottom="16dp"
+        android:onClick="disable"
         android:text="Disable" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="checkPass"
         android:layout_marginBottom="16dp"
+        android:onClick="checkPass"
         android:text="Check" />
-
 </LinearLayout>
