@@ -26,14 +26,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="00-00-0000" />
+            android:layout_marginTop="20dp"
+            android:text="@string/default_date"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
         <ImageView
             android:id="@+id/add_money"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="10dp"
             android:onClick="saveRemoveMoney"
             android:src="@drawable/ic_save_black_24dp" />
@@ -63,6 +64,7 @@
             android:backgroundTint="@color/Transparent"
             android:fontFamily="sans-serif-medium"
             android:paddingTop="16dp"
+            android:text="@string/last_balance"
             android:textAppearance="?android:textAppearanceLarge" />
     </LinearLayout>
 

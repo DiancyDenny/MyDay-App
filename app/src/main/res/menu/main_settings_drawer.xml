@@ -4,15 +4,19 @@
     <item
         android:id="@+id/change_passcode"
         android:icon="@drawable/ic_app_logo"
-        android:title="Change Passcode" />
+        android:title="Change Passcode"
+        android:actionLayout="@layout/activity_main" />
     <item
         android:id="@+id/remove_passcode"
         android:icon="@drawable/ic_app_logo"
-        android:title="Remove Passcode" />
+        android:title="Remove Passcode"
+        android:actionLayout="@layout/activity_main"/>
     <item
         android:id="@+id/remove_account"
         android:icon="@drawable/ic_app_logo"
-        android:title="Remove Account" />
+        android:title="Remove Account"
+        android:actionLayout="@layout/activity_main"/>
+
     <item android:title="Communicate">
         <menu>
             <item

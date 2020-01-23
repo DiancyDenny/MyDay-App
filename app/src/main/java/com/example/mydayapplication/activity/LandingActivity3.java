@@ -64,19 +64,15 @@ public class LandingActivity3 extends AppCompatActivity implements
 
     private void handleSignInResult(GoogleSignInResult result) {
         if (result.isSuccess()) {
-            loadMainActiivty();
+            loadNextPage();
         } else {
             Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
         }
     }
 
-    private void loadMainActiivty() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void handleLaterLinkClick(View view) {
+    private void loadNextPage() {
         Intent intent = new Intent(this, LandingActivity4.class);
         startActivity(intent);
     }
+
 }

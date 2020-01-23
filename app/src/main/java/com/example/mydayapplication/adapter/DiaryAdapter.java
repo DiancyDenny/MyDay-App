@@ -10,14 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mydayapplication.R;
 import com.example.mydayapplication.model.DiaryRequest;
+import com.example.mydayapplication.model.MainResponse;
 
 import java.util.List;
 
 public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> {
 
-    private List<DiaryRequest> lDiary;
+    private List<MainResponse> lDiary;
 
-    public DiaryAdapter(List<DiaryRequest> diaryEntries) {
+    public DiaryAdapter(List<MainResponse> diaryEntries) {
         lDiary = diaryEntries;
     }
 
@@ -28,7 +29,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> 
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View diaryView = inflater.inflate(R.layout.cards_layout, parent, false);
+        View diaryView = inflater.inflate(R.layout.main_adapter_cardview, parent, false);
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(diaryView);
@@ -40,16 +41,29 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(DiaryAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        DiaryRequest diary = lDiary.get(position);
+        MainResponse mainResponse = lDiary.get(position);
+
         // Set item views based on your views and data model
+
+        TextView textViewID = viewHolder.txt_diary_id;
+        textViewID.setText(mainResponse.getId());
+
         TextView textViewDate = viewHolder.txt_date;
-        textViewDate.setText(diary.getDate());
+        textViewDate.setText(mainResponse.getDate());
 
         TextView textViewTitle = viewHolder.txt_title;
-        textViewTitle.setText(diary.getTitle());
+        textViewTitle.setText(mainResponse.getTitle());
+
+        //Get first 25 letters of Desc
+       String desc = mainResponse.getDescription();
+        String trimDesc = "";
+        if (desc.length() > 25)
+            trimDesc = desc.substring(0, 25);
+        else
+            trimDesc = desc;
 
         TextView textViewData = viewHolder.txt_data;
-        textViewData.setText(diary.getDesc());
+        textViewData.setText(trimDesc+"...");
 
       /*  TextView textViewExpense = viewHolder.txt_expense;
         textViewExpense.setText(diary.getExpense().toString());*/
@@ -66,6 +80,8 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
+
+        public TextView txt_diary_id;
         public TextView txt_date;
         public TextView txt_title;
         public TextView txt_data;
@@ -77,6 +93,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> 
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
             super(itemView);
+            txt_diary_id = (TextView) itemView.findViewById(R.id.txt_diary_id);
             txt_date = (TextView) itemView.findViewById(R.id.txt_date);
             txt_title = (TextView) itemView.findViewById(R.id.txt_title);
             txt_data = (TextView) itemView.findViewById(R.id.txt_data);

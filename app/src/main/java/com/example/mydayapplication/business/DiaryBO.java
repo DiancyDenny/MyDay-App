@@ -1,40 +1,82 @@
 package com.example.mydayapplication.business;
 
-import com.example.mydayapplication.model.DiaryRequest;
+import com.example.mydayapplication.model.MainResponse;
 
 import java.util.ArrayList;
 
 public class DiaryBO {
 
-   public ArrayList<DiaryRequest> getAllDiaryData(){
+    //This function is to get all diary data using api in card view
 
-       ArrayList<DiaryRequest>  diaryList = new ArrayList<>(2);
+    public ArrayList<MainResponse> getAllDiaryData() {
 
-       DiaryRequest diaryModel = new DiaryRequest();
-       diaryModel.setDate("23 Nov 2019");
-       diaryModel.setTitle("Good Day");
-       diaryModel.setDesc("The day was....");
-       //diaryModel.setExpense(2500);
-       diaryList.add(diaryModel);
+        ArrayList<MainResponse> mainResponseArrayList = new ArrayList<>(1);
+        MainResponse mainResponse = new MainResponse();
+        mainResponse.getId();
+        mainResponse.getDate();
+        mainResponse.getTitle();
+        mainResponse.getDescription();
+        mainResponseArrayList.add(mainResponse);
 
-       DiaryRequest diaryModel2 = new DiaryRequest();
-       diaryModel2.setDate("23 Nov 2019");
-       diaryModel2.setTitle("Good Day");
-       diaryModel2.setDesc("The day was....");
-      // diaryModel2.setExpense(2500);
-       diaryList.add(diaryModel2);
+        return mainResponseArrayList;
+    }
+
+
+    /*This function is a sample hardcoded diary data to test card view
+     *After api for main response recived use getAllDiaryData*/
+ /*  public List<DiaryRequest> getAllDiaryData(){
+
+       List<DiaryRequest> diaryList = new ArrayList<>(2);
+
+       DiaryRequest diaryRequest = new DiaryRequest();
+       diaryRequest.setUserId(1);
+       diaryRequest.setDate("14 Dec 2019");
+       diaryRequest.setTitle("Good Day");
+       diaryRequest.setDesc("The day was so good.I had implemented....");
+       //diaryRequest.setExpense(2500);
+       diaryList.add(diaryRequest);
+
+       DiaryRequest diaryRequest1 = new DiaryRequest();
+       diaryRequest1.setUserId(1);
+       diaryRequest1.setDate("15 Dec 2019");
+       diaryRequest1.setTitle("Interview");
+       diaryRequest1.setDesc("Today I went to a company for an interview....");
+       //diaryRequest1.setExpense(2500);
+       diaryList.add(diaryRequest1);
+
+       DiaryRequest diaryRequest2= new DiaryRequest();
+       diaryRequest2.setUserId(1);
+       diaryRequest2.setDate("16 Dec 2019");
+       diaryRequest2.setTitle("Sick");
+       diaryRequest2.setDesc("It was very hard to handle yesterday. I'm totally tired....");
+       //diaryRequest.setExpense(2500);
+       diaryList.add(diaryRequest2);
+
+       DiaryRequest diaryRequest3= new DiaryRequest();
+       diaryRequest3.setUserId(1);
+       diaryRequest3.setDate("17 Dec 2019");
+       diaryRequest3.setTitle("Christmas Crib");
+       diaryRequest3.setDesc("Today we stared the crib work. Stars and lights were purchased....");
+       //diaryRequest.setExpense(2500);
+       diaryList.add(diaryRequest3);
+
+       DiaryRequest diaryRequest4= new DiaryRequest();
+       diaryRequest4.setUserId(1);
+       diaryRequest4.setDate("18 Dec 2019");
+       diaryRequest4.setTitle("Transfered Bank Account");
+       diaryRequest4.setDesc("Transferred the bank account from Thrissur to Ernakulam....");
+       //diaryRequest.setExpense(2500);
+       diaryList.add(diaryRequest4);
+
+       DiaryRequest diaryReque= new DiaryRequest();
+       diaryReque.setUserId(1);
+       diaryReque.setDate("19 Dec 2019");
+       diaryReque.setTitle("Test Scroll View");
+       diaryReque.setDesc("Transferred the bank account from Thrissur to Ernakulam....");
+       //diaryRequest.setExpense(2500);
+       diaryList.add(diaryReque);
 
        return diaryList;
-
-   }
+   }*/
 }
 
-
-  /* static String[] nameArray = {"Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich","JellyBean", "Kitkat", "Lollipop", "Marshmallow"};
-    static String[] versionArray = {"1.5", "1.6", "2.0-2.1", "2.2-2.2.3", "2.3-2.3.7", "3.0-3.2.6", "4.0-4.0.4", "4.1-4.3.1", "4.4-4.4.4", "5.0-5.1.1","6.0-6.0.1"};
-
-    static Integer[] drawableArray = {R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp,
-            R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp,
-            R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp, R.drawable.ic_attach_file_black_24dp,R.drawable.ic_attach_file_black_24dp};
-
-    static Integer[] id_ = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; */

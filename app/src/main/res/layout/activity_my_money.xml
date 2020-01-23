@@ -13,19 +13,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:background="@color/colorAppBodyTheme">
+        android:background="@color/colorYellow">
 
         <TextView
-            android:id="@+id/txt_money"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/activity_money"
-            android:textColor="@color/colorWhite"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="15dp"
+            android:paddingTop="16dp"
+            android:text="@string/activity_money_balance"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/txt_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:backgroundTint="@color/Transparent"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="16dp"
+            android:text="@string/last_balance"
+            android:textAppearance="?android:textAppearanceLarge" />
 
         <ImageView
             android:id="@+id/add_money"
@@ -51,69 +59,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_money_head">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:paddingLeft="15dp"
-            android:paddingTop="16dp"
-            android:text="@string/activity_money_balance"
-            android:textAppearance="?android:textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/txt_balance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:backgroundTint="@color/Transparent"
-            android:fontFamily="sans-serif-medium"
-            android:hint="@string/activity_money_balance"
-            android:paddingTop="16dp"
-            android:textAppearance="?android:textAppearanceLarge" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_money_head"
-        android:layout_marginTop="50dp">
-
-        <ListView
-            android:id="@+id/list_view_diary"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/money_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="invisible" />
+            android:layout_marginTop="15dp"
+            android:scrollbars="vertical" />
 
-        <ImageView
-            android:id="@+id/empty_image_view"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/notes_icon" />
-
-        <TextView
-            android:id="@+id/empty_title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/empty_image_view"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-medium"
-            android:paddingTop="16dp"
-            android:text="No added notes yet!!"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/colorAccent" />
-
-        <TextView
-            android:id="@+id/empty_subtitle_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/empty_title_text"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif"
-            android:paddingTop="8dp"
-            android:text="Get started to manage your Expense"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#8ee5ee" />
     </RelativeLayout>
+
 </RelativeLayout>

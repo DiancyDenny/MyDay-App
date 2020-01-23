@@ -2,7 +2,15 @@ package com.example.mydayapplication.model;
 
 public class MainResponse {
 
-    String date, title, desc;
+    private String id,date, title, description;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getDate() {
         return date;
@@ -20,11 +28,11 @@ public class MainResponse {
         this.title = title;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

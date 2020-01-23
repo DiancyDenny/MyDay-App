@@ -15,11 +15,12 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:headerLayout="@layout/main_settings_header"
+        app:menu="@menu/main_settings_drawer" />
 
     <include
-        layout="@layout/app_bar_main"
+        layout="@layout/main_data_controls"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

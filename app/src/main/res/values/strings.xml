@@ -24,6 +24,8 @@
     <string name="act_landing4_label_landing_desc">Now you can start using your Diary. Enjoy!</string>
     <string name="act_landing4_label_btn_okay">OK, got it</string>
 
+    <string name="main_quote">The Mind is Everything. What you Think, you Behave </string>
+
     <string name="default_date">Dec 18 2019</string>
     <string name="new_day_add">ADD NEW DAY</string>
 
@@ -32,6 +34,7 @@
     <string name="add_money_amt">Amount Deposited</string>
     <string name="remove_money_amt">Amount Withdrawn</string>
     <string name="money_remarks">Remarks</string>
+    <string name="last_balance">Rs.28000</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

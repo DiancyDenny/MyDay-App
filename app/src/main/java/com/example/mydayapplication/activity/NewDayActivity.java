@@ -3,11 +3,13 @@ package com.example.mydayapplication.activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +32,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewDayActivity extends AppCompatActivity {
 
+    private static final int PICK_IMAGE_REQUEST_CODE = 546;
 
-    private static Button date_range;
-    private static TextView date_text_view;
+    private Button date_range;
+    private TextView date_text_view;
     private static Calendar myCalendar;
 
     @Override
@@ -48,7 +51,6 @@ public class NewDayActivity extends AppCompatActivity {
         date_text_view = (TextView) findViewById(R.id.txt_date_picked);
         myCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                   int dayOfMonth) {
@@ -60,7 +62,6 @@ public class NewDayActivity extends AppCompatActivity {
 
         };
         date_range.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 new DatePickerDialog(NewDayActivity.this, date, myCalendar
@@ -69,6 +70,14 @@ public class NewDayActivity extends AppCompatActivity {
             }
         });
 
+        ImageView ivUploadImage = findViewById(R.id.act_newday_upload_image);
+        ivUploadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, PICK_IMAGE_REQUEST_CODE);
+            }
+        });
     }
 
     //Updating textbox of calender
@@ -112,11 +121,13 @@ public class NewDayActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(getApplicationContext(), "Error in creating daily note", Toast.LENGTH_LONG).show();
                     }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error: Response body is null", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<DiaryResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<DiaryResponse> call, @NonNull Throwable t) {
                 Log.e("DiaryActivity", t.getMessage().toString());
                 Toast.makeText(getApplicationContext(), "API Call Failure", Toast.LENGTH_LONG).show();
             }

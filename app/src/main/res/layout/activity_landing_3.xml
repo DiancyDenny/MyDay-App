@@ -61,7 +61,7 @@
         android:layout_below="@id/act_landing3_btn_signin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:onClick="handleLaterLinkClick"
+        android:onClick="loadNextPage"
         android:text="@string/landing3_later"
         android:textColor="#FFC300"
         android:textSize="14sp" />
