@@ -31,10 +31,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -47,36 +47,44 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     List<MainResponse> arListDiary;
-    private static Button date_range;
-    private static TextView date_text_view;
+    private Button date_range;
+    private TextView date_text_view;
     private static Calendar myCalendar;
     private DiaryAdapter adapter;
 
     GoogleSignInClient mGoogleSignInClient;
-    Button sign_out;
-    TextView nameTV;
-    TextView emailTV;
-    TextView idTV;
-    ImageView photoIV;
+    Button btnSignout;
+    TextView tvProfilename;
+    TextView tvProfileEmail;
+    ImageView ivProfilePic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        NavigationView navigationView = findViewById(R.id.act_main_navigationview);
+        View headerView = navigationView.getHeaderView(0);
+
+        tvProfilename = headerView.findViewById(R.id.act_main_profilename);
+        tvProfileEmail = headerView.findViewById(R.id.act_main_email);
+        ivProfilePic = headerView.findViewById(R.id.act_main_profilepic);
+        btnSignout = headerView.findViewById(R.id.act_main_logout);
+
+        date_range = findViewById(R.id.date_picker);
+        date_text_view = findViewById(R.id.txt_date_picked);
+
         // arListDiary = getAllDiaryEntries();
         arListDiary = new ArrayList<>();
         adapter = new DiaryAdapter(arListDiary);
+
         final RecyclerView rvDiary = findViewById(R.id.diary_recycler_view);
         rvDiary.setLayoutManager(new LinearLayoutManager(this));
         rvDiary.setAdapter(adapter);
 
         //Date Operation
-        date_range = (Button) findViewById(R.id.date_picker);
-        date_text_view = (TextView) findViewById(R.id.txt_date_picked);
         myCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                   int dayOfMonth) {
@@ -88,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
 
         };
         date_range.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 new DatePickerDialog(MainActivity.this, date, myCalendar
@@ -97,24 +104,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_write_diary);
+        FloatingActionButton fab = findViewById(R.id.fab_write_diary);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, NewDayActivity.class);
                 startActivity(intent);
-
             }
         });
 
-        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab_money_bag);
+        FloatingActionButton fab2 = findViewById(R.id.fab_money_bag);
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MyMoneyActivity.class);
                 startActivity(intent);
-
             }
         });
 
@@ -143,20 +147,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<MainResponse>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<MainResponse>> call, @NonNull Throwable t) {
                 Log.e("DiaryActivity", t.getMessage().toString());
                 Toast.makeText(getApplicationContext(), "API Call Failure", Toast.LENGTH_LONG).show();
             }
         });
 
         //Google Sign-In Data
-
-        sign_out = findViewById(R.id.log_out);
-        nameTV = findViewById(R.id.name);
-        emailTV = findViewById(R.id.email);
-        idTV = findViewById(R.id.id);
-        photoIV = findViewById(R.id.photo);
-
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -177,19 +174,17 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d("MainActivity", "Google" + personName + personEmail + personId);
 
-           // nameTV.setText("Name: " + personName);
-            //emailTV.setText("Email: " + personEmail);
-            //idTV.setText("ID: " + personId);
-            //Glide.with(this).load(personPhoto).into(photoIV);
+            tvProfilename.setText(personName);
+            tvProfileEmail.setText(personEmail);
+            Glide.with(this).load(personPhoto).into(ivProfilePic);
         }
 
-        sign_out.setOnClickListener(new View.OnClickListener() {
+        btnSignout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signOut();
             }
         });
-
     }
 
     public ArrayList<MainResponse> getAllDiaryEntries() {
@@ -216,7 +211,6 @@ public class MainActivity extends AppCompatActivity {
     public void viewThisDay(View view) {
         Intent intent = new Intent(getApplicationContext(), NewDayActivity.class);
         startActivity(intent);
-
     }
 
     private void signOut() {
